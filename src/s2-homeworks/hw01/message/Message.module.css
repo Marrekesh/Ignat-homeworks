@@ -1,0 +1,79 @@
+.message {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.imageAndText {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.imageAndText img {
+    width: 48px;
+    height: 48px;
+    /*left: 1162px;*/
+    /*top: 180px;*/
+}
+
+.text {
+    position: relative;
+    padding: 7px 13px;
+    max-width: 527px;
+    border-radius: 10px 10px 0 10px;
+    margin-right: 18px;
+    background-color: #0066CC;
+    word-wrap: break-word;
+}
+
+
+.text:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 0 13px;
+    border-color: transparent transparent transparent #0066CC;
+    position: absolute;
+
+    top: calc(100% - 10px);
+    left: 100%;
+}
+
+.name {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: end;
+    color:#FFFFFF;
+
+}
+
+.messageText {
+    font-family: Montserrat;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: justify;
+    color:#FFFFFF;
+
+}
+
+.time {
+
+    text-align: end;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    transform: translateX(-11px);
+    color: #000000;
+}

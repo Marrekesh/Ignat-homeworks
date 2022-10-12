@@ -1,0 +1,28 @@
+.App {
+    --header_height: 60px;
+    padding-top: 107px;
+    max-width: 1280px;
+    display: block;
+    margin: 0 auto;
+}
+
+.hw {
+    padding: 24px 70px 32px;
+}
+
+.hw > div:first-child {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 56px;
+}
+
+.hwTitle {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 70px;
+}
