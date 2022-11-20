@@ -38,7 +38,7 @@
 
 }
 
-.nav a {
+.link {
     text-decoration-line: none;
 
     font-family: 'Montserrat';
@@ -60,7 +60,7 @@
 
 }
 
-.nav a.active {
+.active {
     color: red;
 }
 .close {
