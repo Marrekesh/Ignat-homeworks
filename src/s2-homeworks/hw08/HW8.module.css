@@ -5,19 +5,35 @@
 }
 
 .users {
+    border-collapse:collapse
 }
 
 .buttonsContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttonsContainer > button:not(:last-child) {
+    margin-right: 10px;
+    margin-bottom: 18px;
 }
 
 .container {
+    max-width: 900px;
 }
 
 .thead {
+    width: 606px;
+    height: 36px;
+    background-color: #E5E5E5;
+
+
 }
 
 .nameCol {
+    padding: 11px 17px 9px;
 }
 
 .ageCol {
+    padding: 11px 17px 9px;
 }
