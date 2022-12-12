@@ -1,14 +1,53 @@
-.buttonsContainer {
+.buttonsContainer > button {
+    width: 82px;
+    height: 30px;
+    /* Primary/100 */
+
+    background-color: #0066CC;
+    border-radius: 3px;
+    margin-right: 10px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+
+    /* Light /140 */
+
+    color: #FFFFFF;
 }
 
 .clock {
+    width: 200px;
 }
 
 .watch {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+    margin-bottom: 8px;
 }
 
 .watch strong {
 }
 
 .more {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 32px;
+    /*display: none;*/
+    /* identical to box height */
+
+
+    color: rgba(0, 0, 0, 0.5);
 }
