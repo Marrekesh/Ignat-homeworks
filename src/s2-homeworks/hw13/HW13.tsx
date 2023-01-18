@@ -16,11 +16,28 @@ import errorUnknown from './images/error.svg'
 
 const HW13 = () => {
     const [code, setCode] = useState('')
-    const [text, setText] = useState('')
+    const [text, setText] = useState<string>('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
     const send = (x?: boolean | null) => () => {
+
+        // if (x && x === true) {
+        //
+        //     setText('...всё ок)')
+        //     setInfo('код 200 - обычно означает что скорее всего всё ок)')
+        // } else if (x === false) {
+        //     setText('эмитация ошибки на сервере')
+        //     setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных')
+        // } else if (x === undefined) {
+        //     setText('Ты не отправил success в body вообще!')
+        //     setInfo('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+        // } else if (x == null) {
+        //     setText('Error')
+        //     setInfo('Error')
+        // }
+
+
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
@@ -28,20 +45,46 @@ const HW13 = () => {
 
         setCode('')
         setImage('')
-        setText('')
+        // setText('')
         setInfo('...loading')
 
         axios
             .post(url, {success: x})
             .then((res) => {
                 setCode('Код 200!')
+                setText('...всё ок)')
+                setInfo('код 200 - обычно означает что скорее всего всё ок)')
                 setImage(success200)
+                // setText('...все ок)')
                 // дописать
 
             })
             .catch((e) => {
+                if (e.request.status === 400 ) {
+                    setCode('Код 400!')
+                    setText('Ты не отправил success в body вообще!')
+                    setInfo('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                    setImage(error400)
+                    // setText('Ты не отправил succes в body вообще!')
+                } else if (e.request.status === 500) {
+                    setCode('Код 500!')
+                    setText('эмитация ошибки на сервере')
+                    setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                    setImage(error500)
+                    // setText('эмитация ошибки на сервере')
+                } else {
+                    setCode('Error!')
+                    setText('Error')
+                    setInfo('Error')
+                    setImage(errorUnknown)
+                    // setText('Error')
+                }
                 // дописать
 
+            })
+            .finally(() => {
+                // setInfo('')
+                // setText('')
             })
     }
 
@@ -56,6 +99,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading'}
 
                     >
                         Send true
@@ -65,6 +109,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading'}
 
                     >
                         Send false
@@ -74,6 +119,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading'}
 
                     >
                         Send undefined
@@ -83,6 +129,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading'}
 
                     >
                         Send null
