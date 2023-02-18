@@ -13,7 +13,7 @@ import {useSearchParams} from 'react-router-dom'
 * 5 - добавить HW14 в HW5/pages/JuniorPlus
 * */
 
-const getTechs = (find: string) => {
+const getTechs = (find: string) => { // asd
     return axios
         .get<{techs: string[]}>(
             'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test2',
