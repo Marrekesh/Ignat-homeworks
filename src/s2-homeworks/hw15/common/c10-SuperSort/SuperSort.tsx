@@ -35,12 +35,13 @@ const SuperSort: React.FC<SuperSortPropsType> = (
             ? upIcon
             : noneIcon
 
+
     return (
         <span
             id={id + '-sort-' + value}
             onClick={onChangeCallback}
         >
-            {/*сделать иконку*/}
+            &#9650;
             {/*<img*/}
             {/*    id={id + '-icon-' + sort}*/}
             {/*    src={icon}*/}

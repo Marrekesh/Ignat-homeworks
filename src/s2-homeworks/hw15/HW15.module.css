@@ -1,5 +1,6 @@
 .tech {
     width: 50vw;
+    margin-bottom: 5px;
 }
 
 .developer {
@@ -8,6 +9,7 @@
 
 .techHeader {
     width: 50vw;
+    margin-bottom: 10px;
 }
 
 .developerHeader {
