@@ -69,22 +69,24 @@ const HW15 = () => {
         // setCount(
         setCount(newCount)
         // sendQuery(
-        sendQuery({sort, page, count})
+        sendQuery({sort, page: newPage, count: newCount})
         // setSearchParams(
-        setSearchParams(newPage.toString())
+        setSearchParams({page: newPage + '', count: newCount + ''})
 
         //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
-
+        console.log(newSort)
         // setSort(
+        setSort(newSort)
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-
+        setPage(1)
         // sendQuery(
+        sendQuery({sort: newSort, page, count})
         // setSearchParams(
-
+        setSearchParams({page: page + '', count: count + ''})
         //
     }
 
@@ -93,7 +95,7 @@ const HW15 = () => {
         sendQuery({page: params.page, count: params.count})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
-    }, [])
+    }, [searchParams])
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
@@ -116,6 +118,7 @@ const HW15 = () => {
 
                 <SuperPagination
                     page={page}
+                    count={count}
                     itemsCountForPage={count}
                     totalCount={totalCount}
                     onChange={onChangePagination}
